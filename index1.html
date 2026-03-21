@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaya Web Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <style>
+      /* --- Reset & Gaya Global --- */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif; /* Menggunakan sans-serif agar mirip */
+      }
+
+      body {
+        background-color: #f0f2f5; /* Warna latar belakang ringan */
+        color: #333;
+      }
+
+      /* --- Komponen Umum --- */
+      .section {
+        background-color: #fff;
+        max-width: 1000px; /* Lebar maksimum konten agar rapi */
+        margin: 0 auto; /* Tengah-tengah layar */
+        padding: 20px 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sedikit bayangan */
+      }
+
+      .section-title {
+        text-align: center;
+        color: #0066cc; /* Warna biru untuk judul */
+        font-size: 2.5em;
+        margin-bottom: 5px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 1em;
+        margin-bottom: 30px;
+      }
+
+      /* --- 1. Navigasi / Header --- */
+      nav {
+        background-color: #0066cc; /* Biru terang */
+        color: #fff;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav .brand {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      nav .nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
+
+      nav .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9em;
+      }
+
+      /* --- 2. Welcome Section --- */
+      .welcome {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 60px 40px;
+      }
+
+      .welcome-text {
+        flex: 1;
+      }
+
+      .welcome-text h1 {
+        font-size: 3em;
+        margin-bottom: 15px;
+      }
+
+      .welcome-text p {
+        font-size: 1.1em;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .welcome-text button {
+        background-color: #0066cc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .welcome-text button:hover {
+        background-color: #004d99;
+      }
+
+      .welcome-image-wrapper {
+        flex: 1;
+        background: #eee; /* Latar belakang placeholder */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Agar gambar tidak keluar dari container bulat */
+      }
+
+      /* Gaya untuk gambar */
+      .welcome-image-wrapper img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px; /* Radius bulat seperti di gambar */
+        display: block; /* Menghilangkan spasi bawah */
+      }
+
+      /* --- 3. About Me / Biodata --- */
+      .about {
+        margin-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      .biodata-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom sama lebar */
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .bio-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: left; /* Teks di kiri */
+        border-radius: 5px;
+      }
+
+      .bio-label {
+        color: #0066cc; /* Warna biru untuk label */
+        font-weight: bold;
+      }
+
+      /* --- 4. Portofolio --- */
+      .portfolio {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 40px;
+      }
+
+      .portfolio-grid {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .card {
+        flex: 1;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden; /* Agar gambar tidak keluar dari radius card */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .card-img-wrapper {
+        height: 180px;
+        background: #eee; /* Placeholder */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Menutupi wrapper tanpa mengubah aspek rasio */
+      }
+
+      .card-info {
+        padding: 15px;
+      }
+
+      .card-info strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .card-info p {
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      /* --- 5. Footer --- */
+      footer {
+        background-color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        color: #666;
+        font-size: 0.8em;
+        margin-bottom: 20px;
+      }
+
+      /* --- Responsif (Untuk Layar Kecil) --- */
+      @media (max-width: 768px) {
+        .welcome {
+          flex-direction: column-reverse;
+          padding: 30px 20px;
+          text-align: center;
+        }
+        .biodata-grid {
+          grid-template-columns: 1fr;
+        } /* Biodata jadi 1 kolom */
+        .portfolio-grid {
+          flex-direction: column;
+          gap: 15px;
+        } /* Portofolio jadi 1 kolom */
+        .welcome-image-wrapper {
+          width: 100%;
+          max-width: 400px;
+        }
+        .section {
+          padding: 20px;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <nav>
+      <div class="brand">Brand</div>
+      <ul class="nav-links">
+        <li><a href="#header">Header</a></li>
+        <li><a href="#biodata">Biodata</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+      </ul>
+    </nav>
+
+    <header class="section welcome" id="header">
+      <div class="welcome-text">
+        <h1>Selamat Datang di Website Saya</h1>
+        <p>
+          Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks
+          seperti ini.
+        </p>
+        <button>Pelajari Lebih Lanjut</button>
+      </div>
+      <div class="welcome-image-wrapper">
+        <img src="img/pic1.JPG" alt="Foto Profil" />
+      </div>
+    </header>
+
+    <section class="section about" id="biodata">
+      <div class="section-title">About Me</div>
+      <div class="section-subtitle">A brief introduction about myself</div>
+
+      <div class="biodata-grid">
+        <div class="bio-item">
+          <span class="bio-label">Full Name:</span> Eka Indra S
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Education:</span> S1 Informatika
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Pekerjaan:</span> Programmer
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Contact:</span> kaindras@example.com
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Hobi:</span> Membaca, Coding
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Alamat:</span> Denpasar
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio" id="portofolio">
+      <div class="section-title">Portofolio</div>
+      <div class="section-subtitle">Beberapa proyek terakhir saya</div>
+
+      <div class="portfolio-grid">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="img/pic7.JPG" alt="Proyek 1" />
+          </div>
+          <div class="card-info">
+            <strong>Proyek 1</strong>
+            <p>Deskripsi proyek 1.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="img/pic3.JPG" alt="Proyek 2" />
+          </div>
+          <div class="card-info">
+            <strong>Proyek 2</strong>
+            <p>Deskripsi proyek 2.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="img/pic5.JPG" alt="Proyek 3" />
+          </div>
+          <div class="card-info">
+            <strong>Proyek 3</strong>
+            <p>Deskripsi proyek 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section">&copy; 2026 kaindras. All rights reserved.</footer>
+  </body>
+</html>
